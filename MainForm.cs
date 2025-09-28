@@ -21,17 +21,40 @@ namespace BookManager
         {
             lblTotalBooks.Text = "전체 도서 수 : " + DataManager.books.Count;
             lblTotalUsers.Text = "전체 회원 수 : " + DataManager.users.Count;
+
+            dgvBooks.DataSource = null;
+            if (DataManager.books.Count > 0)
+                dgvBooks.DataSource = DataManager.books;
         }
-        private void 도서관리ToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void ToolStripMenuItem_BookManagement_Click(object sender, EventArgs e)
+        {
+            Hide(); // 현재 창 숨김
+            BookForm f = new BookForm();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog(); // 뒤에 창 선택 못함 
+            RefreshScreen();
+            Show(); // 현재 창 보이게
+        }
+
+        private void ToolStripMenuItem_UserManagement_Click(object sender, EventArgs e)
+        {
+            Hide();
+            UserForm f = new UserForm();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
+            Show();
+        }
+
+        private void Button_Borrow_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void 사용자관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Button_Return_Click(object sender, EventArgs e)
         {
 
         }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -53,34 +76,6 @@ namespace BookManager
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToolStripMenuItem_BookManagement_Click(object sender, EventArgs e)
-        {
-            Hide(); // 현재 창 숨김
-            BookForm f = new BookForm();
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.ShowDialog(); // 뒤에 창 선택 못함 
-            Show(); // 현재 창 보이게
-        }
-
-        private void ToolStripMenuItem_UserManagement_Click(object sender, EventArgs e)
-        {
-            Hide();
-            UserForm f = new UserForm();
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.ShowDialog();
-            Show();
-        }
-
-        private void Button_Borrow_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_Return_Click(object sender, EventArgs e)
         {
 
         }

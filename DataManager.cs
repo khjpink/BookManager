@@ -19,19 +19,17 @@ namespace BookManager
         const string USERNAME = "userName";
         const string ISBORROWED = "isBorrowed";
         const string BORROWEDAT = "borrowedAt";
-
         const string ID = "id";
         const string UNAME = "uName";
-
         const string BFILE = "./Books.xml";
         const string UFILE = "./Users.xml";
 
-        static bool checkBorrow(string isBorrowed)
+        static bool checkBorrow(string isBorrowed) // 대여 여부 
         {
             return isBorrowed.Equals("1") ? true : false;
         }
 
-        static int checkBorrow(bool isBorrowed)
+        static int checkBorrow(bool isBorrowed)  // 대여 여부  
         {
             return isBorrowed ? 1 : 0;
         }
@@ -40,7 +38,9 @@ namespace BookManager
             return $"<{tag}>{contents}</{tag}>\n";
         }
 
-        static DataManager() // 정적 생성자 : 딱 한번만 호출됨
+
+        // 정적 생성자 : 딱 한번만 호출됨
+        static DataManager() 
         {
             Load();
         }

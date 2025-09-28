@@ -28,19 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDeleteBook = new System.Windows.Forms.Button();
             this.btnEditBook = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
-            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.txtIsbn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
+            this.isbnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -48,7 +53,7 @@
             this.groupBox1.Controls.Add(this.btnDeleteBook);
             this.groupBox1.Controls.Add(this.btnEditBook);
             this.groupBox1.Controls.Add(this.btnAddBook);
-            this.groupBox1.Controls.Add(this.txtTitle);
+            this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtIsbn);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -67,6 +72,7 @@
             this.btnDeleteBook.TabIndex = 6;
             this.btnDeleteBook.Text = "삭제";
             this.btnDeleteBook.UseVisualStyleBackColor = true;
+            this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
             // 
             // btnEditBook
             // 
@@ -76,6 +82,7 @@
             this.btnEditBook.TabIndex = 5;
             this.btnEditBook.Text = "수정";
             this.btnEditBook.UseVisualStyleBackColor = true;
+            this.btnEditBook.Click += new System.EventHandler(this.btnEditBook_Click);
             // 
             // btnAddBook
             // 
@@ -85,13 +92,15 @@
             this.btnAddBook.TabIndex = 4;
             this.btnAddBook.Text = "추가";
             this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
             // 
-            // txtTitle
+            // txtName
             // 
-            this.txtTitle.Location = new System.Drawing.Point(70, 82);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(433, 21);
-            this.txtTitle.TabIndex = 3;
+            this.txtName.Location = new System.Drawing.Point(70, 82);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(433, 21);
+            this.txtName.TabIndex = 3;
+            this.txtName.Click += new System.EventHandler(this.txtTitle_Click);
             // 
             // txtIsbn
             // 
@@ -99,6 +108,7 @@
             this.txtIsbn.Name = "txtIsbn";
             this.txtIsbn.Size = new System.Drawing.Size(433, 21);
             this.txtIsbn.TabIndex = 2;
+            this.txtIsbn.Click += new System.EventHandler(this.txtIsbn_Click);
             // 
             // label2
             // 
@@ -130,12 +140,38 @@
             // 
             // dgvBooks
             // 
+            this.dgvBooks.AllowUserToAddRows = false;
+            this.dgvBooks.AllowUserToDeleteRows = false;
+            this.dgvBooks.AutoGenerateColumns = false;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.isbnDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.dgvBooks.DataSource = this.bookBindingSource;
             this.dgvBooks.Location = new System.Drawing.Point(6, 24);
             this.dgvBooks.Name = "dgvBooks";
+            this.dgvBooks.ReadOnly = true;
             this.dgvBooks.RowTemplate.Height = 23;
             this.dgvBooks.Size = new System.Drawing.Size(770, 214);
             this.dgvBooks.TabIndex = 0;
+            // 
+            // isbnDataGridViewTextBoxColumn
+            // 
+            this.isbnDataGridViewTextBoxColumn.DataPropertyName = "isbn";
+            this.isbnDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.isbnDataGridViewTextBoxColumn.Name = "isbnDataGridViewTextBoxColumn";
+            this.isbnDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "제목";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataSource = typeof(BookManager.Book);
             // 
             // BookForm
             // 
@@ -150,6 +186,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,9 +199,12 @@
         private System.Windows.Forms.Button btnDeleteBook;
         private System.Windows.Forms.Button btnEditBook;
         private System.Windows.Forms.Button btnAddBook;
-        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtIsbn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isbnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bookBindingSource;
     }
 }
