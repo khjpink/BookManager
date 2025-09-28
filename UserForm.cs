@@ -16,24 +16,43 @@ namespace BookManager
         public UserForm()
         {
             InitializeComponent();
+            //btnAddUser.Click += BtnAddUser_Click;
+            RefreshScreen();
         }
-
         public void RefreshScreen()
         {
-            throw new NotImplementedException();
+            dgvUsers.DataSource = null;
+            if (DataManager.users.Count > 0)
+            {
+                dgvUsers.DataSource = DataManager.users;
+                dgvUsers.Columns[0].HeaderText = "ID";
+                dgvUsers.Columns[1].HeaderText = "이름";
+            }
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e)
+
+        private void BtnAddUser_Click(object sender, EventArgs e)
+        {
+            if (DataManager.users.Exists(item => item.Id.Equals(txtUserId.Text)))
+                MessageBox.Show("ID 중복입니다. 생성 불가!");
+            else
+            {
+                User newUser = new User();
+                newUser.Id = txtUserId.Text;
+                newUser.Name = txtUserName.Text;
+                DataManager.users.Add(newUser);
+                RefreshScreen();
+                DataManager.Save();
+                MessageBox.Show("회원 추가 완료!");
+            }
+        }
+
+        private void BtnEditUser_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnEditUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDeleteUser_Click(object sender, EventArgs e)
+        private void BtnDeleteUser_Click(object sender, EventArgs e)
         {
 
         }

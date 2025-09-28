@@ -72,7 +72,7 @@
             this.btnDeleteBook.TabIndex = 6;
             this.btnDeleteBook.Text = "삭제";
             this.btnDeleteBook.UseVisualStyleBackColor = true;
-            this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
+            this.btnDeleteBook.Click += new System.EventHandler(this.BtnDeleteBook_Click);
             // 
             // btnEditBook
             // 
@@ -82,7 +82,7 @@
             this.btnEditBook.TabIndex = 5;
             this.btnEditBook.Text = "수정";
             this.btnEditBook.UseVisualStyleBackColor = true;
-            this.btnEditBook.Click += new System.EventHandler(this.btnEditBook_Click);
+            this.btnEditBook.Click += new System.EventHandler(this.BtnEditBook_Click);
             // 
             // btnAddBook
             // 
@@ -92,7 +92,7 @@
             this.btnAddBook.TabIndex = 4;
             this.btnAddBook.Text = "추가";
             this.btnAddBook.UseVisualStyleBackColor = true;
-            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
+            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
             // 
             // txtName
             // 
@@ -100,7 +100,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(433, 21);
             this.txtName.TabIndex = 3;
-            this.txtName.Click += new System.EventHandler(this.txtTitle_Click);
+            this.txtName.Click += new System.EventHandler(this.TxtTitle_Click);
             // 
             // txtIsbn
             // 
@@ -108,7 +108,7 @@
             this.txtIsbn.Name = "txtIsbn";
             this.txtIsbn.Size = new System.Drawing.Size(433, 21);
             this.txtIsbn.TabIndex = 2;
-            this.txtIsbn.Click += new System.EventHandler(this.txtIsbn_Click);
+            this.txtIsbn.Click += new System.EventHandler(this.TxtIsbn_Click);
             // 
             // label2
             // 

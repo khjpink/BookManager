@@ -24,16 +24,16 @@ namespace BookManager
         const string BFILE = "./Books.xml";
         const string UFILE = "./Users.xml";
 
-        static bool checkBorrow(string isBorrowed) // 대여 여부 
+        static bool CheckBorrow(string isBorrowed) // 대여 여부 
         {
             return isBorrowed.Equals("1") ? true : false;
         }
 
-        static int checkBorrow(bool isBorrowed)  // 대여 여부  
+        static int CheckBorrow(bool isBorrowed)  // 대여 여부  
         {
             return isBorrowed ? 1 : 0;
         }
-        static string makeTag(string tag, string contents)
+        static string MakeTag(string tag, string contents)
         {
             return $"<{tag}>{contents}</{tag}>\n";
         }
@@ -55,12 +55,12 @@ namespace BookManager
                 foreach(var item in bx.Descendants("book"))
                 {
                     Book b = new Book();
-                    b.isbn = item.Element(ISBN).Value;
-                    b.name = item.Element(NAME).Value;
-                    b.userId = item.Element(USERID).Value;
-                    b.userName = item.Element(USERNAME).Value;
-                    b.isBorrowed = checkBorrow(item.Element(ISBORROWED).Value);
-                    b.borrowedAt = DateTime.Parse(item.Element(BORROWEDAT).Value);
+                    b.Isbn = item.Element(ISBN).Value;
+                    b.Name = item.Element(NAME).Value;
+                    b.UserId = item.Element(USERID).Value;
+                    b.UserName = item.Element(USERNAME).Value;
+                    b.IsBorrowed = CheckBorrow(item.Element(ISBORROWED).Value);
+                    b.BorrowedAt = DateTime.Parse(item.Element(BORROWEDAT).Value);
                     books.Add(b);
 
                 }
@@ -69,11 +69,11 @@ namespace BookManager
                 users = (from user in ux.Descendants("user")
                         select new User()
                         {
-                            id=user.Element(ID).Value,
-                            name=user.Element(UNAME).Value,
+                            Id=user.Element(ID).Value,
+                            Name=user.Element(UNAME).Value,
                         }).ToList();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Save();
                 Load();
@@ -87,12 +87,12 @@ namespace BookManager
             foreach(var item in books)
             {
                 booksOutput += "\t<book>" + Environment.NewLine;
-                booksOutput += "\t\t" + makeTag(ISBN, item.isbn);
-                booksOutput += "\t\t" + makeTag(NAME, item.name);
-                booksOutput += "\t\t" + makeTag(USERID, item.userId);
-                booksOutput += "\t\t" + makeTag(USERNAME, item.userName);
-                booksOutput += "\t\t" + makeTag(ISBORROWED, checkBorrow(item.isBorrowed).ToString());
-                booksOutput += "\t\t" + makeTag(BORROWEDAT, item.borrowedAt.ToString());
+                booksOutput += "\t\t" + MakeTag(ISBN, item.Isbn);
+                booksOutput += "\t\t" + MakeTag(NAME, item.Name);
+                booksOutput += "\t\t" + MakeTag(USERID, item.UserId);
+                booksOutput += "\t\t" + MakeTag(USERNAME, item.UserName);
+                booksOutput += "\t\t" + MakeTag(ISBORROWED, CheckBorrow(item.IsBorrowed).ToString());
+                booksOutput += "\t\t" + MakeTag(BORROWEDAT, item.BorrowedAt.ToString());
                 booksOutput += "\t</book>" + Environment.NewLine;
             }
             booksOutput += "</books>\n";
@@ -103,8 +103,8 @@ namespace BookManager
             foreach(var item in users)
             {
                 usersOutput += "\t<user>\n";
-                usersOutput += "\t\t" + makeTag(ID, item.id);
-                usersOutput += "\t\t" + makeTag(UNAME, item.name);
+                usersOutput += "\t\t" + MakeTag(ID, item.Id);
+                usersOutput += "\t\t" + MakeTag(UNAME, item.Name);
                 usersOutput += "\t</user>\n";
             }
             usersOutput += "</users>\n";

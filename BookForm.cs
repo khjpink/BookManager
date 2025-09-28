@@ -28,12 +28,13 @@ namespace BookManager
                 bookBindingSource.DataSource = DataManager.books;
         }
 
-        private void btnAddBook_Click(object sender, EventArgs e)
+        
+        private void BtnAddBook_Click(object sender, EventArgs e)
         {
             bool existBook = false;
-            foreach(var item in DataManager.books)
+            foreach (var item in DataManager.books)
             {
-                if(item.isbn.Equals(txtIsbn.Text))
+                if (item.Isbn.Equals(txtIsbn.Text))
                 {
                     existBook = true;
                     break;
@@ -44,30 +45,30 @@ namespace BookManager
             else
             {
                 Book newBook = new Book();
-                newBook.isbn = txtIsbn.Text;
-                newBook.name = txtName.Text;
+                newBook.Isbn = txtIsbn.Text;
+                newBook.Name = txtName.Text;
                 DataManager.books.Add(newBook);
                 RefreshScreen();
                 DataManager.Save();
             }
         }
 
-        private void btnEditBook_Click(object sender, EventArgs e)
+        private void BtnEditBook_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnDeleteBook_Click(object sender, EventArgs e)
+        private void BtnDeleteBook_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtIsbn_Click(object sender, EventArgs e)
+        private void TxtIsbn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtTitle_Click(object sender, EventArgs e)
+        private void TxtTitle_Click(object sender, EventArgs e)
         {
 
         }

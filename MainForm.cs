@@ -16,6 +16,19 @@ namespace BookManager
         {
             InitializeComponent();
             RefreshScreen();
+            dgvBooks.CellClick += delegate (object o, DataGridViewCellEventArgs e)
+            {
+                DataGridView thisView = o as DataGridView;
+                Book selectBook = thisView.CurrentRow.DataBoundItem as Book;
+                txtIsbn.Text = selectBook.Isbn;
+                txtName.Text = selectBook.Name;
+            };
+            dgvUsers.CellClick += (o, e) =>
+            {
+                User selectUsere = (o as DataGridView).CurrentRow.DataBoundItem as User;
+                txtUserId.Text = selectUsere.Id;
+            };
+
         }
         public void RefreshScreen()
         {
@@ -25,6 +38,10 @@ namespace BookManager
             dgvBooks.DataSource = null;
             if (DataManager.books.Count > 0)
                 dgvBooks.DataSource = DataManager.books;
+
+            dgvUsers.DataSource = null;
+            if (DataManager.users.Count > 0)
+                dgvUsers.DataSource = DataManager.users;
         }
 
         private void ToolStripMenuItem_BookManagement_Click(object sender, EventArgs e)
@@ -43,6 +60,7 @@ namespace BookManager
             UserForm f = new UserForm();
             f.StartPosition = FormStartPosition.CenterScreen;
             f.ShowDialog();
+            RefreshScreen();
             Show();
         }
 
@@ -55,20 +73,6 @@ namespace BookManager
         {
 
         }
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -76,6 +80,11 @@ namespace BookManager
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }

@@ -109,7 +109,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "도서 및 회원 현황";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblDelayedBooks
             // 
@@ -140,7 +139,6 @@
             this.lblTotalUsers.TabIndex = 5;
             this.lblTotalUsers.Text = "전체 회원 수 :";
             this.lblTotalUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTotalUsers.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblTotalBooks
             // 
@@ -151,7 +149,6 @@
             this.lblTotalBooks.TabIndex = 4;
             this.lblTotalBooks.Text = "전체 도서 수 :";
             this.lblTotalBooks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTotalBooks.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
             // 
@@ -303,15 +300,15 @@
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn1
             // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "이름";
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
             this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -321,43 +318,43 @@
             // 
             // isbnDataGridViewTextBoxColumn
             // 
-            this.isbnDataGridViewTextBoxColumn.DataPropertyName = "isbn";
-            this.isbnDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.isbnDataGridViewTextBoxColumn.DataPropertyName = "Isbn";
+            this.isbnDataGridViewTextBoxColumn.HeaderText = "Isbn";
             this.isbnDataGridViewTextBoxColumn.Name = "isbnDataGridViewTextBoxColumn";
             this.isbnDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "책 제목";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userIdDataGridViewTextBoxColumn
             // 
-            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "userId";
-            this.userIdDataGridViewTextBoxColumn.HeaderText = "회원 ID";
+            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
             this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
             this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userNameDataGridViewTextBoxColumn
             // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "userName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "회원 이름";
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
             this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
             this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // isBorrowedDataGridViewCheckBoxColumn
             // 
-            this.isBorrowedDataGridViewCheckBoxColumn.DataPropertyName = "isBorrowed";
-            this.isBorrowedDataGridViewCheckBoxColumn.HeaderText = "대출 여부";
+            this.isBorrowedDataGridViewCheckBoxColumn.DataPropertyName = "IsBorrowed";
+            this.isBorrowedDataGridViewCheckBoxColumn.HeaderText = "IsBorrowed";
             this.isBorrowedDataGridViewCheckBoxColumn.Name = "isBorrowedDataGridViewCheckBoxColumn";
             this.isBorrowedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // borrowedAtDataGridViewTextBoxColumn
             // 
-            this.borrowedAtDataGridViewTextBoxColumn.DataPropertyName = "borrowedAt";
-            this.borrowedAtDataGridViewTextBoxColumn.HeaderText = "대출 날짜";
+            this.borrowedAtDataGridViewTextBoxColumn.DataPropertyName = "BorrowedAt";
+            this.borrowedAtDataGridViewTextBoxColumn.HeaderText = "BorrowedAt";
             this.borrowedAtDataGridViewTextBoxColumn.Name = "borrowedAtDataGridViewTextBoxColumn";
             this.borrowedAtDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -379,6 +376,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "도서 관리 프로그램";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
