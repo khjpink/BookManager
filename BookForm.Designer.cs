@@ -97,6 +97,10 @@
             this.btnAddBook.Text = "추가";
             this.btnAddBook.UseVisualStyleBackColor = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
+>>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
 =======
             this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
 >>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
@@ -108,6 +112,10 @@
             this.txtName.Size = new System.Drawing.Size(433, 21);
             this.txtName.TabIndex = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            this.txtName.Click += new System.EventHandler(this.TxtTitle_Click);
+>>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
 =======
             this.txtName.Click += new System.EventHandler(this.TxtTitle_Click);
 >>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
@@ -119,6 +127,10 @@
             this.txtIsbn.Size = new System.Drawing.Size(433, 21);
             this.txtIsbn.TabIndex = 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            this.txtIsbn.Click += new System.EventHandler(this.TxtIsbn_Click);
+>>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
 =======
             this.txtIsbn.Click += new System.EventHandler(this.TxtIsbn_Click);
 >>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1

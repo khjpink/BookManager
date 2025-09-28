@@ -20,9 +20,15 @@ namespace BookManager
             InitializeComponent();
             RefreshScreen();
 <<<<<<< HEAD
+<<<<<<< HEAD
             dgvBooks.CellClick += delegate (object o, DataGridViewCellEventArgs e) // 무명 델리게이트
             {
                 DataGridView thisView = o as DataGridView; // o 이벤트 발생시키는 주체
+=======
+            dgvBooks.CellClick += delegate (object o, DataGridViewCellEventArgs e)
+            {
+                DataGridView thisView = o as DataGridView;
+>>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
 =======
             dgvBooks.CellClick += delegate (object o, DataGridViewCellEventArgs e)
             {
@@ -33,7 +39,11 @@ namespace BookManager
                 txtName.Text = selectBook.Name;
             };
 <<<<<<< HEAD
+<<<<<<< HEAD
             dgvUsers.CellClick += (o, e) => // 람다 
+=======
+            dgvUsers.CellClick += (o, e) =>
+>>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
 =======
             dgvUsers.CellClick += (o, e) =>
 >>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
@@ -42,6 +52,7 @@ namespace BookManager
                 txtUserId.Text = selectUsere.Id;
             };
 
+<<<<<<< HEAD
 <<<<<<< HEAD
             BtnEvent borrowEvent = delegate(object s, EventArgs e) // 대여
             {
@@ -135,6 +146,8 @@ namespace BookManager
             return item.IsBorrowed;
 =======
 >>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
+=======
+>>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
         }
         public void RefreshScreen()
         {
@@ -194,6 +207,11 @@ namespace BookManager
 
         private void button2_Click(object sender, EventArgs e)
 >>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
