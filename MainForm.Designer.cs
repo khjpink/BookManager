@@ -374,7 +374,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "도서 관리 프로그램";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

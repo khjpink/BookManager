@@ -53,14 +53,6 @@ namespace BookManager
             }
         }
 
-<<<<<<< HEAD
-    
-=======
-        private void BtnEditBook_Click(object sender, EventArgs e)
-        {
->>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
-
-      
 
         private void BtnEditBook_Click(object sender, EventArgs e)
         {
@@ -106,22 +98,12 @@ namespace BookManager
             }
         }
 
-<<<<<<< HEAD
         private void DgvBooks_CellClick(object sender, DataGridViewCellEventArgs e)
-=======
-        private void TxtIsbn_Click(object sender, EventArgs e)
->>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
         {
             Book book = dgvBooks.CurrentRow.DataBoundItem as Book;
             txtIsbn.Text = book.Isbn;
             txtName.Text = book.Name;
         }
-
-<<<<<<< HEAD
-=======
-        private void TxtTitle_Click(object sender, EventArgs e)
-        {
->>>>>>> 230cdc7ff1d89e11b09b45d44f5d9a71ddbf14a1
 
     }
 }
