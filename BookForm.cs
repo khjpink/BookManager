@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BookManager
 {
-    public partial class Form3 : Form
+    public partial class BookForm : Form, IRefresh
     {
-        public Form3()
+        public BookForm()
         {
             InitializeComponent();
+        }
+
+        public void RefreshScreen()
+        {
+            throw new NotImplementedException();
         }
     }
 }

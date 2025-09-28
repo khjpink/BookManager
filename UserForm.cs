@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookManager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace BookManager
 {
-    public partial class Form2 : Form
+    public partial class UserForm : Form, IRefresh
     {
-        public Form2()
+        public UserForm()
         {
             InitializeComponent();
+        }
+
+        public void RefreshScreen()
+        {
+            throw new NotImplementedException();
         }
     }
 }
