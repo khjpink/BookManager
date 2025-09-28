@@ -16,7 +16,6 @@ namespace BookManager
         public UserForm()
         {
             InitializeComponent();
-            //btnAddUser.Click += BtnAddUser_Click;
             RefreshScreen();
         }
         public void RefreshScreen()
@@ -49,12 +48,44 @@ namespace BookManager
 
         private void BtnEditUser_Click(object sender, EventArgs e)
         {
-
+            User user = null;
+            for (int i = 0; i < DataManager.users.Count; i++)
+            {
+                if (DataManager.users[i].Id.Equals(txtUserId.Text))
+                {
+                    user = DataManager.users[i];
+                    user.Name = txtUserName.Text;
+                    RefreshScreen();
+                    DataManager.Save();
+                    MessageBox.Show("수정되었습니다.");
+                    break;
+                }
+            }
+            if (user == null)
+                MessageBox.Show("해당 이름이 없어서 수정 불가능합니다.");
         }
 
         private void BtnDeleteUser_Click(object sender, EventArgs e)
         {
+            //bool existUser = false;
+            for(int i=0; i<DataManager.users.Count; i++)
+            {
+                if (DataManager.users[i].Id.Equals(txtUserId.Text))
+                {
+                    DataManager.users.RemoveAt(i);
+                    //existUser = true;
+                    MessageBox.Show("삭제 되었습니다.");
+                    RefreshScreen();
+                    break;
+                }
+            }
+        }
 
+        private void DgvUsers_CellCilck(object sender, DataGridViewCellEventArgs e)
+        {
+            User user = dgvUsers.CurrentRow.DataBoundItem as User;
+            txtUserId.Text = user.Id;
+            txtUserName.Text = user.Name;
         }
     }
 }
