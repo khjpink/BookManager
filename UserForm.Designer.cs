@@ -115,7 +115,7 @@
             this.btnDeleteUser.TabIndex = 6;
             this.btnDeleteUser.Text = "삭제";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
-            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            this.btnDeleteUser.Click += new System.EventHandler(this.BtnDeleteUser_Click);
             // 
             // btnEditUser
             // 
@@ -125,7 +125,7 @@
             this.btnEditUser.TabIndex = 5;
             this.btnEditUser.Text = "수정";
             this.btnEditUser.UseVisualStyleBackColor = true;
-            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
+            this.btnEditUser.Click += new System.EventHandler(this.BtnEditUser_Click);
             // 
             // btnAddUser
             // 
@@ -135,7 +135,7 @@
             this.btnAddUser.TabIndex = 4;
             this.btnAddUser.Text = "추가";
             this.btnAddUser.UseVisualStyleBackColor = true;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            this.btnAddUser.Click += new System.EventHandler(this.BtnAddUser_Click);
             // 
             // txtUserName
             // 
