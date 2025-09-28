@@ -34,7 +34,7 @@ namespace BookManager
                 txtUserId.Text = selectUsere.Id;
             };
 
-            BtnEvent borrowEvent = delegate(object s, EventArgs e) // 대여
+            BtnEvent BorrowEvent = delegate(object s, EventArgs e) // 대여
             {
                 if (txtIsbn.Text.Trim().Equals(""))
                     MessageBox.Show("ISBN을 입력하셔야 도서 대출이 가능합니다.");
@@ -75,12 +75,10 @@ namespace BookManager
                         MessageBox.Show("해당 ISBN은 존재하지 않으므로 도서 대출이 불가능합니다.");
                         System.Diagnostics.Debug.WriteLine($"실패 :{ex.Message}");
                     }
-                };                ;
-
-
+                };
             };
 
-            BtnEvent returnEvent = (s, e) => // 반납 
+            BtnEvent ReturnEvent = (s, e) => // 반납 
             {
                 if (txtIsbn.Text.Trim().Equals(""))
                     MessageBox.Show("ISBN이 없어서 반납이 불가능합니다.");
@@ -117,8 +115,8 @@ namespace BookManager
                     }
                 }
             };
-            btnBorrow.Click += new EventHandler(borrowEvent);
-            btnReturn.Click += new EventHandler(returnEvent);
+            btnBorrow.Click += new EventHandler(BorrowEvent);
+            btnReturn.Click += new EventHandler(ReturnEvent);
         }
 
         private bool CheckBorrowed(Book item)
